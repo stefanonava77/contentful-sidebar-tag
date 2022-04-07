@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Core extensions CSS from Contentful. -->
+    <link rel="stylesheet" href="https://unpkg.com/contentful-ui-extensions-sdk@3/dist/cf-extension.css">
+    <!-- Styles for added / removed text -->
+    <style>
+        .tag-item {
+            font-weight: bold;
+            color: black;
+            border-radius: 5px;
+            background-color: #5cb85c;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Contenful UI Extensions SDK API -->
+    <script src="https://unpkg.com/contentful-ui-extensions-sdk@3"></script>
+
+    <!-- TAG UI Extension -->
+    <script>
+
+        function tagVisibility(api) {
+            console.log(api);
+            const tags = api.entry.getMetadata()
+            const body = document.querySelector("body");
+            tags.tags.forEach(tag => body.innerHTML += `<span class='tag-item'>${tag.sys.id}</span>`);
+        }
+
+        window.contentfulExtension.init(tagVisibility);
+    </script>
+
+</body>
+
+</html>

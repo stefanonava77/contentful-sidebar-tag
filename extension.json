@@ -1,0 +1,7 @@
+{
+    "id": "sidebar-tag",
+    "name": "Website Visibility",
+    "srcdoc": "index.html",
+    "fieldTypes": ["Entry"],
+    "sidebar": true
+  }
